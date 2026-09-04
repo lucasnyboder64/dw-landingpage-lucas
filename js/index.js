@@ -32,13 +32,16 @@ function setHero() {
 
     hero_container.append(hero_container_content);
     hero_container_content.append(headline,copy,icon,button);
-    
+
     heroElement.append(hero_container);
     headerElement.append(image);
 }
 
 function setServices() {
     services.forEach(function (service) {
+        const card = document.createElement("div");
+        card.classList.add("service_card");
+
         const image = document.createElement("img");
         let headline = document.createElement("h1");
         let text = document.createElement("p");
@@ -49,15 +52,24 @@ function setServices() {
         text.textContent = service.text;
         linktext.textContent = service.linktext;
 
-        servicesElement.append(image, headline, text, linktext);
+        card.append(image,headline, text, linktext);
+
+        //servicesElement.append(image, headline, text, linktext);
+        servicesElement.append(card);
     });
 }
 
 function setFacilities() {
-    let headline = document.createElement("h1")
+    let headline = document.createElement("h1");
     headline.textContent = facilities.headline;
     facilitiesElement.append(headline);
+
+    const facilities_container = document.createElement("div");
+    facilities_container.classList.add("facilities_container");
     facilities.options.forEach((option) => {
+        const card = document.createElement("div");
+        card.classList.add("facilitiy_card");
+
         let icon = document.createElement("img");
         let headline = document.createElement("h2");
         let text = document.createElement("p");
@@ -65,23 +77,30 @@ function setFacilities() {
         icon.setAttribute("src", option.icon);
         headline.textContent = option.headline;
         text.textContent = option.text;
-
-        facilitiesElement.append(icon, headline, text);
+        card.append(icon, headline, text);
+        facilities_container.append(card);
     });
+    facilitiesElement.append(facilities_container);
 }
 
 function setSites() {
     let headline = document.createElement("h1");
     let text = document.createElement("p");
     let icon = document.createElement("img");
+    let button = document.createElement("button");
 
     headline.textContent = sites.headline;
     text.textContent = sites.text;
     icon.setAttribute("src", sites.btnicon);
 
-    sitesElement.append(headline, text, icon);
+    button.innerHTML = `<img src="${icon.getAttribute("src")}" />`;
+    button.innerHTML += "Start";
+
+    sitesElement.append(headline, text, button, icon);
 
     sites.places.forEach((place) => {
+        const card = document.createElement("div");
+        card.classList.add("sites_card");
         const image = document.createElement("img");
         let name = document.createElement("h2");
         let city = document.createElement("p");
@@ -89,7 +108,8 @@ function setSites() {
         image.setAttribute("src", place.img);
         name.textContent = place.name;
         city.textContent = place.city;
-        sitesElement.append(image,name,city);
+        card.append(image,name,city);
+        sitesElement.append(card);
     });
 }
 
