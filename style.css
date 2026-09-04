@@ -1,0 +1,47 @@
+.wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header > img {
+    max-width: 1440px;
+    width: 100%;
+}
+
+.hero_container {
+    width: 600px;
+    height: 537px;
+    position: relative;
+    bottom: 200px;
+    background-color: white;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero_container h1 {
+    font-size: 39px;
+}
+
+.hero_container p {
+    font-size: 20px;
+}
+
+.hero_container button {
+    width: 250px;
+    height: 65px;
+    background: #F78065;
+    outline: none;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+
+.hero_container_content {
+    width: 521px;
+}

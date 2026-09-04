@@ -10,17 +10,31 @@ const advantagesElement = document.querySelector(".advantages");
 services.forEach(service => console.log(service.headline));
 
 function setHero() {
+    const hero_container = document.createElement("div");
+    hero_container.classList.add("hero_container");
+
+    const hero_container_content = document.createElement("div");
+    hero_container_content.classList.add("hero_container_content");
+
     const image = document.createElement("img");
     let headline = document.createElement("h1");
     let copy = document.createElement("p");
     let icon = document.createElement("img");
+    let button = document.createElement("button");
 
     image.setAttribute("src", hero.image);
     headline.textContent = hero.headline;
-    copy = hero.copy;
+    copy.textContent = hero.copy;
     icon.setAttribute("src", hero.icon);
 
-    heroElement.append(image, headline, copy, icon);
+    button.innerHTML = `<img src="${icon.getAttribute("src")}" />`;
+    button.innerHTML += "Explore";
+
+    hero_container.append(hero_container_content);
+    hero_container_content.append(headline,copy,icon,button);
+    
+    heroElement.append(hero_container);
+    headerElement.append(image);
 }
 
 function setServices() {
