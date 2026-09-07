@@ -14,7 +14,7 @@
     margin: 0 auto;
 }
 
-header > img {
+header>img {
     max-width: 1440px;
     width: 100%;
 }
@@ -53,7 +53,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:10px;
+    gap: 10px;
 }
 
 .hero_container_content {
@@ -90,6 +90,8 @@ button {
 .sites_card {
     width: 230px;
     height: 418px;
+    display: grid;
+    grid-template-rows: 1fr 50px 30px;
 }
 
 .sites_card img {
@@ -115,7 +117,9 @@ button {
 }
 
 .facilitiy_card {
-    width:256px;
+    width: 256px;
+    display: grid;
+    grid-template-rows: 120px 90px 100px;
 }
 
 .facilitiy_card p {
@@ -129,7 +133,7 @@ button {
 
 .facilitiy_card p {
     font-family: monst;
-    
+
 }
 
 .facilities_container {
@@ -147,4 +151,56 @@ button {
     color: #F78065;
     font-size: 18px;
     font-weight: bold;
+}
+
+.view_site {
+    font-family: monst;
+    color: #F78065;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.advantages {
+    margin: 200px 0 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 150px 1fr;
+    justify-self: center;
+    gap:50px;
+}
+
+.start h1 {
+    font-family: merriweather;
+    font-size: 36px;
+}
+
+.start p {
+    font-family: monst;
+    font-size: 18px;
+}
+
+.sites_card h2 {
+    font-family: merriweather;
+}
+
+.city {
+    color: #3F3D56;
+    font-family: monst;
+}
+
+.our_advantages {
+    font-family: merriweather;
+}
+
+.advantage_card {
+    display: grid;
+    grid-row: 2/2;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 386px;
+}
+
+.advantage_card p {
+    font-family: monst;
+    font-size: 14px;
+    line-height: 24px;
 }

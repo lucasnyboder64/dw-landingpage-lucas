@@ -6,6 +6,7 @@ const servicesElement = document.querySelector(".services");
 const facilitiesElement = document.querySelector(".facilities");
 const sitesElement = document.querySelector(".sites");
 const advantagesElement = document.querySelector(".advantages");
+const footerElement = document.querySelector(".footer");
 //eksempel på at udskrive alle overskrifter i services i konsollen:
 services.forEach(service => console.log(service.headline));
 
@@ -31,7 +32,7 @@ function setHero() {
     button.innerHTML += "Explore";
 
     hero_container.append(hero_container_content);
-    hero_container_content.append(headline,copy,icon,button);
+    hero_container_content.append(headline, copy, icon, button);
 
     heroElement.append(hero_container);
     headerElement.append(image);
@@ -54,7 +55,7 @@ function setServices() {
         linktext.textContent = service.linktext;
         linktext.style.color = "#F78065";
 
-        card.append(image,headline, text, linktext);
+        card.append(image, headline, text, linktext);
 
         //servicesElement.append(image, headline, text, linktext);
         servicesElement.append(card);
@@ -83,7 +84,7 @@ function setFacilities() {
         headline.textContent = option.headline;
         text.textContent = option.text;
         card.append(icon, headline, text, more_text);
-        
+
         facilities_container.append(card);
     });
     facilitiesElement.append(facilities_container);
@@ -114,26 +115,61 @@ function setSites() {
         let name = document.createElement("h2");
         let city = document.createElement("p");
 
+        let view_site = document.createElement("p");
+        view_site.classList.add("view_site");
+        view_site.textContent = "View the Site";
+
         image.setAttribute("src", place.img);
         name.textContent = place.name;
         city.textContent = place.city;
-        card.append(image,name,city);
+        city.classList.add("city");
+        card.append(image, name, city, view_site);
         sitesElement.append(card);
     });
 }
 
-function setAdvantages(){
+function setAdvantages() {
+    let headline = document.createElement("h1");
+    headline.textContent = "Our Advantages";
+    headline.classList.add("our_advantages");
+    advantagesElement.append(headline);
     advantages.forEach((advantage) => {
         let icon = document.createElement("img");
         let headline = document.createElement("h1");
         let text = document.createElement("p");
+        let card = document.createElement("div");
+        card.classList.add("advantage_card");
 
-        icon.setAttribute = advantage.icon;
+        icon.setAttribute("src", advantage.icon);
         headline.textContent = advantage.headline;
         text.textContent = advantage.text;
-
-        advantagesElement.append(icon, headline, text);
+        card.append(icon, headline, text);
+        advantagesElement.append(card);
     });
+}
+
+function setFooter(){
+    let headline = document.createElement("h1");
+    let smallHeadline = document.createElement("p");
+    headline.textContent = footer.headline;
+    smallHeadline.textContent = footer.smallHeadline;
+
+    footerElement.append(smallHeadline, headline);
+
+    footer.categories.forEach((category)=>{
+        let info = document.createElement("div");
+        let categoryHeadline = document.createElement("h2");
+        categoryHeadline.textContent = category.headline;
+        info.append(categoryHeadline);
+        footerElement.append(info);
+
+        category.lines.forEach((line)=>{
+            let text = document.createElement("p");
+            text.textContent = line.text;
+            info.append(text);
+            footerElement.append(info);
+        });
+    }); 
 }
 
 setServices();
@@ -141,3 +177,4 @@ setHero();
 setFacilities();
 setSites();
 setAdvantages();
+setFooter();
