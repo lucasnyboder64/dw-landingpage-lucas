@@ -151,25 +151,34 @@ function setAdvantages() {
 function setFooter(){
     let headline = document.createElement("h1");
     let smallHeadline = document.createElement("p");
+    let infoContainer = document.createElement("div");
+    let author = document.createElement("div");
+    author.classList.add("author");
+
+    infoContainer.classList.add("info_container");
     headline.textContent = footer.headline;
     smallHeadline.textContent = footer.smallHeadline;
 
-    footerElement.append(smallHeadline, headline);
+    author.append(smallHeadline, headline);
+    footerElement.append(author);
 
     footer.categories.forEach((category)=>{
         let info = document.createElement("div");
+        info.classList.add("info");
         let categoryHeadline = document.createElement("h2");
         categoryHeadline.textContent = category.headline;
         info.append(categoryHeadline);
-        footerElement.append(info);
-
+        infoContainer.append(info);
         category.lines.forEach((line)=>{
             let text = document.createElement("p");
             text.textContent = line.text;
             info.append(text);
-            footerElement.append(info);
+            infoContainer.append(info);
+            
         });
-    }); 
+    });
+    
+    footerElement.append(infoContainer);
 }
 
 setServices();
