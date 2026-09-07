@@ -50,7 +50,9 @@ function setServices() {
         image.setAttribute("src", service.illustration);
         headline.textContent = service.headline;
         text.textContent = service.text;
+        text.style.color = "rgba(0,0,0,0.5)";
         linktext.textContent = service.linktext;
+        linktext.style.color = "#F78065";
 
         card.append(image,headline, text, linktext);
 
@@ -73,17 +75,23 @@ function setFacilities() {
         let icon = document.createElement("img");
         let headline = document.createElement("h2");
         let text = document.createElement("p");
+        let more_text = document.createElement("p");
+        more_text.classList.add("more_text");
+        more_text.textContent = "Show me more";
 
         icon.setAttribute("src", option.icon);
         headline.textContent = option.headline;
         text.textContent = option.text;
-        card.append(icon, headline, text);
+        card.append(icon, headline, text, more_text);
+        
         facilities_container.append(card);
     });
     facilitiesElement.append(facilities_container);
 }
 
 function setSites() {
+    const left_region = document.createElement("div");
+    left_region.classList.add("start");
     let headline = document.createElement("h1");
     let text = document.createElement("p");
     let icon = document.createElement("img");
@@ -96,7 +104,8 @@ function setSites() {
     button.innerHTML = `<img src="${icon.getAttribute("src")}" />`;
     button.innerHTML += "Start";
 
-    sitesElement.append(headline, text, button, icon);
+    left_region.append(headline, text, button, icon);
+    sitesElement.append(left_region);
 
     sites.places.forEach((place) => {
         const card = document.createElement("div");

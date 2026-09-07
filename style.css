@@ -1,3 +1,13 @@
+@font-face {
+    font-family: merriweather;
+    src: url(Merriweather-VariableFont_opsz\,wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: monst;
+    src: url(Montserrat-VariableFont_wght.ttf);
+}
+
 .wrapper {
     max-width: 1440px;
     width: 100%;
@@ -25,10 +35,12 @@ header > img {
 
 .hero_container h1 {
     font-size: 39px;
+    font-family: merriweather;
 }
 
 .hero_container p {
     font-size: 20px;
+    font-family: monst;
 }
 
 button {
@@ -55,14 +67,84 @@ button {
 .services {
     display: flex;
     justify-content: center;
+    gap: 50px;
 }
 
 .service_card {
     width: 386px;
 }
 
-.sites_card {}
+.service_card h1 {
+    font-family: merriweather;
+}
+
+.service_card p {
+    font-family: merriweather;
+}
+
+.service_card a {
+    font-family: 'monst';
+    font-weight: bold;
+}
+
+.sites_card {
+    width: 230px;
+    height: 418px;
+}
+
+.sites_card img {
+    width: 100%;
+    height: 100%;
+}
+
+.start {
+    width: 320px;
+}
+
+.sites {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.facilities {
+    margin: 100px 0 100px;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    justify-self: center;
+}
+
+.facilitiy_card {
+    width:256px;
+}
+
+.facilitiy_card p {
+    line-height: 24px;
+}
+
+.facilitiy_card h2 {
+    font-family: merriweather;
+    font-weight: bold;
+}
+
+.facilitiy_card p {
+    font-family: monst;
+    
+}
 
 .facilities_container {
     display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.facilities h1 {
+    font-family: merriweather;
+}
+
+.more_text {
+    font-family: monst;
+    color: #F78065;
+    font-size: 18px;
+    font-weight: bold;
 }
