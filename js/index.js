@@ -44,8 +44,11 @@ function setHero() {
     const profile_icon = document.createElement("img");
     profile_icon.setAttribute("src", "assets/icon.svg");
     profile_icon.classList.add("profile_icon");
-    
-    profile_rect.append(profile_icon);
+    const pil = document.createElement("img");
+    pil.setAttribute("src","assets/pil.svg");
+    pil.classList.add("pil");
+
+    profile_rect.append(pil, profile_icon);
     headerElement.append(image, cube, profile_rect);
 }
 

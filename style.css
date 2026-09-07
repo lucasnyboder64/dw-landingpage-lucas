@@ -56,6 +56,11 @@ header>img {
     margin-right: 10px;
 }
 
+.pil {
+    position: absolute;
+    left: 20px;
+}
+
 .hero_container {
     max-width: 600px;
     width: 100%;
@@ -204,6 +209,10 @@ button {
     grid-template-rows: 150px 1fr;
     justify-self: center;
     gap: 50px;
+}
+
+.advantage_card h1 {
+    font-family: merriweather;
 }
 
 .start h1 {
