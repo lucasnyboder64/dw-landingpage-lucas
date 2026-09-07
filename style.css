@@ -10,7 +10,7 @@
 
 .footer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     background-color: #F7F7F7;
     max-width: 1440px;
     width: 100%;
@@ -26,6 +26,34 @@
 header>img {
     max-width: 1440px;
     width: 100%;
+}
+
+.cube {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 40px;
+    left: 122px;
+}
+
+.profile_rect {
+    width: 86px;
+    height: 53px;
+    position: absolute;
+    top: 35px;
+    left: 90%;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.profile_icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    margin-right: 10px;
 }
 
 .hero_container {
@@ -175,7 +203,7 @@ button {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 150px 1fr;
     justify-self: center;
-    gap:50px;
+    gap: 50px;
 }
 
 .start h1 {
@@ -216,6 +244,13 @@ button {
 
 .info_container {
     display: flex;
+    gap: 100px;
+    padding: 100px;
+}
+
+.author {
+    width: 300px;
+    padding: 100px;
 }
 
 .author p {
@@ -227,4 +262,43 @@ button {
 .author h1 {
     font-family: merriweather;
     font-size: 48px;
+}
+
+.bottom_nav {
+    display: flex;
+    gap: 80px;
+    margin-right: 80px;
+    justify-content: end;
+}
+
+.copyright {
+    font-family: monst;
+    position: relative;
+    bottom: 50px;
+    margin-left: 50px;
+}
+
+.info h2 {
+    font-family: merriweather;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.info p {
+    font-family: monst;
+    font-size: 14px;
+}
+
+.bottom_nav a {
+    font-family: monst;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    bottom: 50px;
+}
+
+.line {
+    width: 500px;
+    height: 1px;
+    background-color: black;
 }

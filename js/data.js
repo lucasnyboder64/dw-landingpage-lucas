@@ -163,4 +163,28 @@ let footer = {
         }
     ],
 
+    bottom:{
+        copyright:"EazyCamper. All rights reserved.",
+        links:[
+            {
+                text:"About"
+            },
+
+            {
+                text:"Site Map"
+            },
+
+            {
+                text:"Terms"
+            },
+
+            {
+                text:"Privacy Policy"
+            },
+
+            {
+                text:"Teams"
+            },
+        ]
+    }
 }

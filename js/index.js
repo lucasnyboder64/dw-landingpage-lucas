@@ -35,7 +35,18 @@ function setHero() {
     hero_container_content.append(headline, copy, icon, button);
 
     heroElement.append(hero_container);
-    headerElement.append(image);
+    const cube = document.createElement("img");
+    cube.setAttribute("src", "assets/cube.png");
+    cube.classList.add("cube");
+
+    const profile_rect = document.createElement("div");
+    profile_rect.classList.add("profile_rect");
+    const profile_icon = document.createElement("img");
+    profile_icon.setAttribute("src", "assets/icon.svg");
+    profile_icon.classList.add("profile_icon");
+    
+    profile_rect.append(profile_icon);
+    headerElement.append(image, cube, profile_rect);
 }
 
 function setServices() {
@@ -153,6 +164,7 @@ function setFooter(){
     let smallHeadline = document.createElement("p");
     let infoContainer = document.createElement("div");
     let author = document.createElement("div");
+
     author.classList.add("author");
 
     infoContainer.classList.add("info_container");
@@ -174,11 +186,34 @@ function setFooter(){
             text.textContent = line.text;
             info.append(text);
             infoContainer.append(info);
-            
         });
     });
+
+    let copyright = document.createElement("p");
+    copyright.textContent = footer.bottom.copyright;
+    copyright.classList.add("copyright");
+    let nav = document.createElement("nav");
+    nav.classList.add("bottom_nav");
     
+    let bottom_section = document.createElement("div");
+
     footerElement.append(infoContainer);
+    footerElement.append(copyright);
+
+    footer.bottom.links.forEach((item)=>{
+
+        let link = document.createElement("a");
+        link.textContent = item.text;
+        link.setAttribute("href","#");
+
+        //let text = link.text;
+
+        nav.append(link);
+    });
+
+    
+
+    footerElement.append(nav);
 }
 
 setServices();
